@@ -1,12 +1,14 @@
 titlescreen:
 	
 	jsr init_screen_time
+	jsr init_title_stars
 	
 titlescreen_loop:
 
 	jsr update_drawing
 	jsr draw_title
-
+	jsr draw_title_stars
+	
 	jsr update_screen_time
 	
 	jsr 	read_button1_flank
@@ -56,3 +58,5 @@ press_start_string:
 to_start_string: 
                 db 0, 0, "TO START", $80
 				
+				
+	include 'stars.asm'
