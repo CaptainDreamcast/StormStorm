@@ -1,2 +1,3 @@
 # Storm Storm
-Something resembling a sports game for Vectrex.
+Something resembling a storm game for Vectrex.
+[Itch page](https://captaindreamcast.itch.io/storm-storm)

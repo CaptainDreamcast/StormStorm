@@ -1,8 +1,10 @@
+        include "../addons/libtari/vectrex/wrapperdata.I"
+
 MAX_ENEMY_AMOUNT 	equ 	2
 MAX_PARTICLE_EFFECT_AMOUNT 	equ 	2
 SINGLE_PARTICLE_EFFECT_AMOUNT 	equ 	20
 
-PaddlePositionX     equ   $C880
+PaddlePositionX     equ  (GameDataStart)
 PaddlePositionY	  equ 	(PaddlePositionX+2)
 PaddleVelocityX	  equ   (PaddlePositionY+2)
 PaddleVelocityY	  equ   (PaddleVelocityX+2)
@@ -27,8 +29,7 @@ EnemyPositionX		equ  (EnemyActive + 2*MAX_ENEMY_AMOUNT)
 EnemyPositionY		equ  (EnemyPositionX + 2*MAX_ENEMY_AMOUNT)
 EnemyVelocityX		equ  (EnemyPositionY + 2*MAX_ENEMY_AMOUNT)
 CurrentEnemy		equ  (EnemyVelocityX + 2*MAX_ENEMY_AMOUNT)
-TestPosition 		equ  (CurrentEnemy + 2)
-EnemySentinel		equ  (TestPosition + 2)
+EnemySentinel		equ  (CurrentEnemy + 2)
 
 CurrentEffect	  	equ EnemySentinel
 CurrentParticle 	equ (CurrentEffect + 2)
@@ -46,8 +47,7 @@ ScreenIsActive		equ (CurrentScreen + 2)
 ScreenTicks			equ (ScreenIsActive + 2)
 ScreenSeconds		equ (ScreenTicks + 2)
 ScreenMinutes		equ (ScreenSeconds + 2)
-Button1Flank		equ (ScreenMinutes + 2)
-Score				equ (Button1Flank + 2)
+Score				equ (ScreenMinutes + 2)
 GameLogicSentinel	equ (Score + 10)
 
 StackPointer 		equ (GameLogicSentinel)

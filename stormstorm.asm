@@ -1,31 +1,28 @@
 ;***************************************************************************
 ; DEFINE SECTION
 ;***************************************************************************
-                include "VECTREX.I"
-				include "data.i"
+        include "../addons/libtari/vectrex/VECTREX.I"
+        include "data.i"
 ; start of vectrex memory with cartridge name...
 
-                org     0
+        org     0
 ;***************************************************************************
 ; HEADER SECTION
 ;***************************************************************************
-				include "header.asm"
+        include "header.asm"
 ;***************************************************************************
 ; CODE SECTION
 ;***************************************************************************
 ; here the cartridge program starts off
 init:
 
-				jsr gameloop
-				jmp init
-	
+        jsr     gameloop
+        jmp     init
 
-				include "gameloop.asm"
-				include "util.asm"
-				include "time.asm"
-				
-;***************************************************************************
-                end init
-;***************************************************************************
+        include "gameloop.asm"
+        include "time.asm"
 
-				
+        include "../addons/libtari/vectrex/util.asm"
+        ;***************************************************************************
+        end     init
+        ;***************************************************************************
